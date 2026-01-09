@@ -9,7 +9,7 @@ struct ZoneCount {
 
 struct SlotCount {
     std::string zone;
-    int hour;              // 0–23
+    int hour;              
     long long count;
 };
 
