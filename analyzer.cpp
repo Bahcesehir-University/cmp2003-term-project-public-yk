@@ -6,6 +6,8 @@
 #include <array>
 #include <algorithm>
 #include <cctype>
+
+
 namespace {
     static std::unordered_map<std::string, long long> zoneCounts;
     static std::unordered_map<std::string, std::array<long long, 24>> zoneHourCounts;
@@ -66,6 +68,7 @@ void TripAnalyzer::ingestFile(const std::string& csvPath) {
         cols.reserve(6);
         std::string tok;
         while (std::getline(ss, tok, ',')) cols.push_back(tok);
+        // A well‑formed record should have at least 6 columns
         if (cols.size() < 6) continue;
         const std::string &zone = cols[1];
         const std::string &datetime = cols[3];
